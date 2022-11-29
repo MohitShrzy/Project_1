@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rank</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>M1</th>
+      <th>M2</th>
+      <th>M3</th>
+      <th>M4</th>
+      <th>M5</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for mark in @marks do %>
+      <tr>
+        <td><%= mark.student_id %></td>
+        <td><%= mark.m1 %></td>
+        <td><%= mark.m2 %></td>
+        <td><%= mark.m3 %></td>
+        <td><%= mark.m4 %></td>
+        <td><%= mark.m5 %></td>
+        <td><%= mark.m1+mark.m2+mark.m3+mark.m4+mark.m5 %></td>
+        <td><%= link_to 'Show', mark %></td>
+        <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
+        <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Home', home_index_path %>
